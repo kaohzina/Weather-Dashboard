@@ -6,30 +6,35 @@ header {
   background-color: rgba(75, 75, 141, 0.534);
 }
 
-.search {
-  width: 30%;
+h1 {
+  width: 100%;
+  font-size: xx-large;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 input{
-  width: 90%;
-  padding: 15px;
+  width: 100%;
+  padding: 10px;
   font-size: x-large;
   margin: 10px;
+  border-radius: 5px;
 }
 button {
-  width: 95%;
+  width: 100%;
   padding: 5px;
   font-size: larger;
   background-color: lightblue;
   border-color: transparent;
   margin: 10px;
+  border-radius: 5px;
 }
 ul{
   font-size: xx-large;
   font-weight: bold;
 }
 
-div {
+/* div {
   padding: 5px;
   float: left;
   width: auto;
@@ -40,4 +45,4 @@ container {
   width: fit-content;
   float: left;
   border-color:black;
-}
+} */
