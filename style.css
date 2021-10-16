@@ -34,3 +34,10 @@ div {
   float: left;
   width: auto;
 }
+
+container {
+  padding: 100px;
+  width: fit-content;
+  float: left;
+  border-color:black;
+}
