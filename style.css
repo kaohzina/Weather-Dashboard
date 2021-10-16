@@ -6,10 +6,17 @@ header {
   background-color: rgba(75, 75, 141, 0.534);
 }
 
-div {
-  font-size: xx-large;
-  font-weight: bold;
+.search {
   width: 30%;
+}
+
+input{
+  width: 90%;
+  padding: 15px;
+}
+
+div {
   padding: 5px;
-  float: inline-start;
+  float: left;
+  width: auto;
 }
