@@ -13,6 +13,12 @@ header {
 input{
   width: 90%;
   padding: 15px;
+  font-size: x-large;
+}
+
+ul{
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 div {
