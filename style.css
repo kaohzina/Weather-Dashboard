@@ -1,0 +1,15 @@
+header {
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  font-size: xx-large;
+  background-color: rgba(75, 75, 141, 0.534);
+}
+
+div {
+  font-size: xx-large;
+  font-weight: bold;
+  width: 30%;
+  padding: 5px;
+  float: inline-start;
+}
