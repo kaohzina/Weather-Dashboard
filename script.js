@@ -1,4 +1,4 @@
-fetch('https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}'
+fetch('api.openweathermap.org/data/2.5/onecall?lat=30.489772&lon=-99.771335'
   )
   .then(function(response){ 
     return response.json();
