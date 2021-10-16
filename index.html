@@ -21,10 +21,32 @@
     <h1>Search for a City:</h1>
     <input type="text" id="location"placeholder="Search for a city">
     <button id="search">Search</button>
+    <div class="card rounded p-3 ml-1 m-10 mt-3"></div>
   </div>
-    <div class="col-12 col-md-8">
-      <h1> Check the weather:</h1>
-      <container> This is where the API is displayed!</container>
+    <div class="col-12 col-md-8 ">
+      <h1>Check the weather:</h1>
+      <container>
+        <div>
+          <h2 id=cityName class="mt-3"></h2>
+        </div>
+        <div class="list">
+          <div id="temperature">Temp:</div>
+          <div id="humidity">Wind:</div>
+          <div id="wind-speed">Humidity:</div>
+          <div id="uvIndex">UV Index:</div>
+        </div>   
+      </container>
+      <container> <div class="row">
+        <h2>5 Day Forecast</h2>
+      </div>
+     
+    <div class="row">
+      <div class="col forecast card h-100 bg-primary text-white rounded"></div>       
+      <div class="col forecast card h-100 bg-primary text-white rounded"></div>
+      <div class="col forecast card h-100 bg-primary text-white rounded"></div>
+      <div class="col forecast card h-100 bg-primary text-white rounded"></div>
+      <div class="col forecast card h-100 bg-primary text-white rounded"></div>
+    </div> </container>
     </div>
   </section>
   
