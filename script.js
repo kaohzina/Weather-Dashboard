@@ -1,4 +1,3 @@
-const apiKey = "e0ec3338bd31d20ecc0b95e95df665f8"
 const locationEl = document.getElementById("location");
 const searchEl = document.getElementById("search");
 const searchHistoryEl = document.getElementById("searchHistory");
@@ -14,6 +13,23 @@ const day3El = document.getElementById("3");
 const day4El = document.getElementById("4");
 const day5El = document.getElementById("5");
 
-const currentDay = moment().subtract(10, 'days').calendar();
-currentDayEl.text(currentDay);
-console.log(currentDayEl);
+let list = [];
+
+const searchHistoryAdd = function(){
+  searchHistoryEl = document.createElement("button");
+  searchHistoryEl.textContent = searchItem;
+  searchHistoryEl.classList = "btn";
+  searchHistoryEl.setAttribute("city", searchItem);
+  searchHistoryEl.setAttribute("type", button);
+  locationEl.append(searchHistoryAdd);
+}
+
+searchEl.addEventListener("click", function() {
+  locationEl
+})
+
+const saveSearch = function() {
+  let newSearch = searchItem
+
+  localStorage.setItem('City', JSON.stringify(saveList))
+}
