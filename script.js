@@ -1,3 +1,5 @@
+
+const APIkey = "e0ec3338bd31d20ecc0b95e95df665f8";
 const locationEl = document.getElementById("location");
 const searchEl = document.getElementById("search");
 const searchHistoryEl = document.getElementById("searchHistory");
@@ -41,3 +43,19 @@ function addEntry() {
   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
   searchHistoryAdd();
 };
+
+
+
+fetch('https://api.openweathermap.org/data/2.5/weather?q&exclude={part}&appid=e0ec3338bd31d20ecc0b95e95df665f8'
+)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
+
+  // temperatureEl.textContent = "Temperature: " + current.weather.main.temp + " °F";
+  // humidityEl.textContent = "Humidity: " + current.weather.main.humidity + " %";
+  // windSpeedEl.textContent = "Wind Speed: " + current.weather.wind.speed + " MPH";
+  
