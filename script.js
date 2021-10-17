@@ -15,41 +15,33 @@ const day5El = document.getElementById("5");
 
 let list = [];
 
-const searchHistoryAdd = function(){
-  searchHistoryEl = document.createElement("button");
-  searchHistoryEl.textContent = searchItem;
-  searchHistoryEl.classList = "btn";
-  searchHistoryEl.setAttribute("city", searchItem);
-  searchHistoryEl.setAttribute("type", button);
-  locationEl.append(searchHistoryAdd);
-}
+// const searchHistoryAdd = function(){
+//   cityName = document.createElement("button");
+//   cityName.textContent = locationEl;
+//   cityName.classList = "btn";
+//   cityName.setAttribute("city", locationEl);
+//   cityName.setAttribute("type", button);
+//   cityName.append(searchHistoryAdd);
+// }
 
-searchEl.addEventListener('click', function(event) {
-  event.preventDefault();
+const renderLastSearch = function() {
   const oldSearch = localStorage.getItem('location')
-
   if (oldSearch === null) {
     return;
   }
+  searchHistoryEl.textContent = oldSearch;
+  console.log(oldSearch);
+}
+renderLastSearch();
+searchEl.addEventListener('click', function(event) {
+  event.preventDefault();
+  const Search = locationEl.value;
+  localStorage.setItem('city', Search);
+
+  const oldSearch = localStorage.getItem('city')
+  if (oldSearch === null) {
+    return;
+  }
+  searchHistoryEl.textContent = oldSearch;
+  console.log(oldSearch);
 })
-
-
-// const renderLastSearch = function() { 
-//   const newSearch = JSON.parse(localStorage.getItem('search')) || [];
-// }
-
-
-// const oldSearch = JSON.parse(localStorage.getItem('search')) || [];
-// const newSearch = locationEl;
-
-// searchEl.addEventListener("click", function(event) {
-//   event.preventDefault();
-//   localStorage.setItem('City', JSON.stringify(oldSearch));
-//   // renderLastSearch();
-// })
-
-// const saveSearch = function() { 
-//   let searchItem = locationEl.value;
-//   localStorage.setItem('City', searchItem);
-
-// }
