@@ -46,7 +46,7 @@ function addEntryToLocalStorage() {
 
 function getLocationByQuery(city) {
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city},&appid=e0ec3338bd31d20ecc0b95e95df665f8`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city},&appid=e0ec3338bd31d20ecc0b95e95df665f8`
   )
     .then(function (response) {
       return response.json();
