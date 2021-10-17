@@ -24,12 +24,32 @@ const searchHistoryAdd = function(){
   locationEl.append(searchHistoryAdd);
 }
 
-searchEl.addEventListener("click", function() {
-  locationEl
+searchEl.addEventListener('click', function(event) {
+  event.preventDefault();
+  const oldSearch = localStorage.getItem('location')
+
+  if (oldSearch === null) {
+    return;
+  }
 })
 
-const saveSearch = function() {
-  let newSearch = searchItem
 
-  localStorage.setItem('City', JSON.stringify(saveList))
-}
+// const renderLastSearch = function() { 
+//   const newSearch = JSON.parse(localStorage.getItem('search')) || [];
+// }
+
+
+// const oldSearch = JSON.parse(localStorage.getItem('search')) || [];
+// const newSearch = locationEl;
+
+// searchEl.addEventListener("click", function(event) {
+//   event.preventDefault();
+//   localStorage.setItem('City', JSON.stringify(oldSearch));
+//   // renderLastSearch();
+// })
+
+// const saveSearch = function() { 
+//   let searchItem = locationEl.value;
+//   localStorage.setItem('City', searchItem);
+
+// }
