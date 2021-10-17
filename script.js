@@ -41,19 +41,22 @@ function addEntry() {
   // Save allEntries back to local storage
   existingEntries.push(entry);
   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-  searchHistoryAdd();
+  // searchHistoryAdd();
+  getWeatherByQuery(entry.City)
 };
 
+function getWeatherByQuery(city) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ec3338bd31d20ecc0b95e95df665f8`
+  )
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    });
 
+}
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q&exclude={part}&appid=e0ec3338bd31d20ecc0b95e95df665f8'
-)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-  });
 
   // temperatureEl.textContent = "Temperature: " + current.weather.main.temp + " °F";
   // humidityEl.textContent = "Humidity: " + current.weather.main.humidity + " %";
