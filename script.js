@@ -13,35 +13,54 @@ const day3El = document.getElementById("3");
 const day4El = document.getElementById("4");
 const day5El = document.getElementById("5");
 
-let list = [];
 
-// const searchHistoryAdd = function(){
-//   cityName = document.createElement("button");
-//   cityName.textContent = locationEl;
-//   cityName.classList = "btn";
-//   cityName.setAttribute("city", locationEl);
-//   cityName.setAttribute("type", button);
-//   cityName.append(searchHistoryAdd);
-// }
-
-const renderLastSearch = function() {
-  const oldSearch = localStorage.getItem('location')
-  if (oldSearch === null) {
-    return;
-  }
-  searchHistoryEl.textContent = oldSearch;
-  console.log(oldSearch);
+const searchHistoryAdd = function(){
+  cityName = document.createElement("button");
+  cityName.textContent = searchHistoryEl;
+  cityName.classList = "btn";
+  cityName.setAttribute("city", searchHistoryEl);
+  cityName.setAttribute("type", button);
+  cityName.append(searchHistoryAdd);
 }
-renderLastSearch();
-searchEl.addEventListener('click', function(event) {
-  event.preventDefault();
-  const Search = locationEl.value;
-  localStorage.setItem('city', Search);
 
-  const oldSearch = localStorage.getItem('city')
-  if (oldSearch === null) {
-    return;
-  }
-  searchHistoryEl.textContent = oldSearch;
-  console.log(oldSearch);
-})
+// const renderLastSearch = function() {
+//   const oldSearch = localStorage.getItem('location')
+//   if (oldSearch === null) {
+//     return;
+//   }
+//   searchHistoryEl.textContent = oldSearch;
+//   console.log(oldSearch);
+// }
+// renderLastSearch();
+// searchEl.addEventListener('click', function(event) {
+//   event.preventDefault();
+//   const oldSearch = JSON.parse(localStorage.getItem("Cities"));
+//   if (oldSearch === null) {
+//     oldSearch = [];
+//     return;
+//   }
+  
+//   const entry = {
+//     "City": locationEl.value
+//   };
+//   localStorage.setItem("entry", JSON.stringify(entry));
+//   event.push(entry);
+//   localStorage.setItem("Cities", json.stringify(oldSearch));
+// })
+
+searchEl.addEventListener('click', addEntry); 
+
+function addEntry() {
+  // Parse any JSON previously stored in allEntries
+  var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+  if(existingEntries == null) existingEntries = [];
+  var entryTitle = locationEl.value;
+  
+  var entry = {
+      "City": entryTitle,
+  };
+  localStorage.setItem("entry", JSON.stringify(entry));
+  // Save allEntries back to local storage
+  existingEntries.push(entry);
+  localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+};
