@@ -26,9 +26,12 @@ const day5El = document.getElementById("5");
 //   entryTitle.append(searchHistoryAdd);
 // }
 
-searchEl.addEventListener('click', addEntry); 
+const lat = '';
+const lon = '';
 
-function addEntry() {
+searchEl.addEventListener('click', addEntryToLocalStorage, getLocationByQuery); 
+
+function addEntryToLocalStorage() {
   // Parse any JSON previously stored in allEntries
   var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
   if(existingEntries == null) existingEntries = [];
@@ -44,6 +47,18 @@ function addEntry() {
   // searchHistoryAdd();
   getWeatherByQuery(entry.City)
 };
+
+function getLocationByQuery(lat, lon) {
+  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},&appid=e0ec3338bd31d20ecc0b95e95df665f8`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
+  const coordinates = coords.find(lat, lon);
+  console.log(coordinates);
+}
 
 function getWeatherByQuery(city) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e0ec3338bd31d20ecc0b95e95df665f8`
