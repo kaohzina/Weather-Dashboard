@@ -14,15 +14,15 @@ const day3El = document.getElementById("3");
 const day4El = document.getElementById("4");
 const day5El = document.getElementById("5");
 
+searchList = [];
 //trying to get the list sorted
 const searchHistoryAdd = function(){
-  // searchHistoryEl.textContent = locationEl.value;
+  searchHistoryEl.textContent = locationEl.value;
   entryTitle = document.createElement("button");
-  // cityName.textContent = searchHistoryEl;
   entryTitle.classList = "btn";
   entryTitle.setAttribute("city", searchHistoryEl);
   entryTitle.setAttribute("type", "button");
-  entryTitle.append(searchHistoryAdd);
+  entryTitle.append(searchList);
 }
 
 searchEl.addEventListener("click", addEntryToLocalStorage, getLocationByQuery);
@@ -70,10 +70,10 @@ function getWeatherByLatLon(lat, lon) {
       return response.json();
     })
     .then(function (data) {
+
+      newTemp = parseFloat(data.current.temp);
       console.log(data);
-      console.log("current temp?", data.current.temp);
-      
-      temperatureEl.textContent = "Temperature: " + data.current.temp + " °F";
+      temperatureEl.textContent = "Temperature: " + (((newTemp-273.15)*1.8)+32); + " °F";
       humidityEl.textContent = "Humidity: " + data.current.humidity + " %";
       windSpeedEl.textContent = "Wind Speed: " + data.current.wind_speed + " MPH";
       uvIndexEl.textContent = "UV Index: " + data.current.uvi;
